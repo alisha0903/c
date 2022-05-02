@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        .form1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid white;
+            margin-top: 100px;
+            padding: 10px;
+            background-color: aquamarine;
+
+        }
+
+        form {
+            border: 2px solid black;
+            border-radius: 13px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: greenyellow;
+
+        }
+
+        .form_item label {
+            display: block;
+        }
+
+        .form_item {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form1">
+        <h1 class="heading">TIP CALCULATOR</h1>
+        
+            <div class="form_item">
+                <label for="Bill_Amount">Bill Amount</label>
+                <input type="number" name="" id="Bill_Amount">
+            </div>
+            <div class="form_item">
+                <label for="Per_Bill">Per Bill</label>
+                <input type="number" name="" id="Per_Bill">
+            </div>
+            <div class="form_item">
+                <label for="Per_Bill">No. of People</label>
+                <input type="number" name="" id="No_People">
+            </div>
+            <div class="form_item">
+                <label for="Total_Amount">Total Amount</label>
+                <input type="number" name="" id="Total_Amount" disabled>
+            </div>
+            <button onclick="tipcal()">Calculate</button>
+        
+    </div>
+    <script>
+        function tipcal() 
+        {
+            let amount = document.getElementById('Bill_Amount').value;
+            let perbill = document.getElementById('Per_Bill').value;
+            let people = document.getElementById('No_People').value;
+            let tip = people * amount * (perbill / 100);
+            let total = tip + Number(amount);
+            document.getElementById('Total_Amount').value = total;
+        }
+
+    </script>
+</body>
+
+</html>
